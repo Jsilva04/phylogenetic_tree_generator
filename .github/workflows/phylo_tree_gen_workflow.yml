@@ -1,0 +1,33 @@
+name: Phylogenetic Tree Generator Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  convert_sequence:
+    name: Convert Sequence Data
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install toytree
+
+    - name: Install dependencies
+      run: pip install toyplot
+
+    - name: Run Script
+      run: python phylogenetic_tree_generator data/example.fasta.treefile wildcard
+
