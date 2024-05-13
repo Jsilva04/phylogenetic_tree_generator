@@ -29,5 +29,5 @@ jobs:
       run: pip install toyplot
 
     - name: Run Script
-      run: python phylogenetic_tree_generator data/example.fasta.treefile wildcard
+      run: python phylogenetic_tree_generator data/example.fasta.treefile Paguma
 
