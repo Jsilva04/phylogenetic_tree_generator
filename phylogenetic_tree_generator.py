@@ -20,6 +20,6 @@ if os.path.exists(file_name):
         print("Aborting...")
         sys.exit()
 
-canvas, axes, mark = rtre.draw(node_hover=True, node_sizes=8, tip_labels_align=True)
+canvas, axes, mark = rtre.draw(node_hover=True, node_sizes=16, tip_labels_align=True, node_labels='support', use_edge_lengths=False)
 toyplot.pdf.render(canvas, file_name)
 print(f"Phylogenetic tree saved to {file_name}")
